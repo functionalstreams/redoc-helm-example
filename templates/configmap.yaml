@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "redoc.fullname" . }}
+  labels:
+    heritage: {{ .Release.Service }}
+    release: {{ .Release.Name }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version }}
+    app: {{ template "redoc.name" . }}
+data:
+{{ $root := . }}
+{{ range $path, $bytes := .Files.Glob "data/*" }}
+{{ $path | replace "data/" "" | indent 2 }}: |-
+{{ $root.Files.Get $path | printf "%s" | indent 4 }}
+{{ end }}

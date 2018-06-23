@@ -1,0 +1,8 @@
+name: redoc-helm-example
+description: Redoc with helm example
+version: 0.1.0
+keywords:
+  - redoc
+home: https://github.com/kubernetes/helm
+sources:
+  - https://github.com/Rebilly/ReDoc
