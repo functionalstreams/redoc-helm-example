@@ -5,5 +5,5 @@ It is based on the nginx helm chart and just copies ReDoc required configuration
 
 
 Clone the repo locally, install it and you should be able to see the following page:
-Inline-style: 
+
 ![alt text](images/redoc_sample.png "Sample page")
